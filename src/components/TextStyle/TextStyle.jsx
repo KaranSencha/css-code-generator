@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
+import updateValue from "../../helpers";
 
 function TextStyle() {
+  // State for controlling various properties
   const [customText, setCustomText] = useState(
     "Your can add you own text using side 'Custome Text' Box"
   );
@@ -18,12 +20,7 @@ function TextStyle() {
   const [letterSpacing, setLetterSpacing] = useState(0);
   const [textIndent, setTextIndent] = useState(0);
 
-  const updateValue = (setter) => {
-    return (event) => {
-      setter(event.target.value);
-    };
-  };
-
+  // Functions to update state based on input changes
   const updateCustomText = updateValue(setCustomText);
   const updateFontFamily = updateValue(setFontFamily);
   const updateFontSize = updateValue(setFontSize);
@@ -39,6 +36,7 @@ function TextStyle() {
   const updateLetterSpacing = updateValue(setLetterSpacing);
   const updateTextIndent = updateValue(setTextIndent);
 
+  // CSS styles for the text
   const textStyles = {
     fontFamily: fontFamily,
     fontSize: fontSize + "px",
@@ -55,31 +53,30 @@ function TextStyle() {
     textIndent: textIndent + "px",
   };
 
-  // copy to clipboard
-	const [copyBtnText, setCopyBtnText] = useState("Copy");
+  // Copy to clipboard functionality
+  const [copyBtnText, setCopyBtnText] = useState("Copy");
   const preRef = useRef(null);
   const copyCode = () => {
     if (preRef.current) {
       const textToCopy = preRef.current.textContent;
-			navigator.clipboard.writeText(textToCopy);
-			setCopyBtnText("Copied");
-			setTimeout(function () {
-				setCopyBtnText("Copy");
-			}, 3000);
+      navigator.clipboard.writeText(textToCopy);
+      setCopyBtnText("Copied");
+      setTimeout(function () {
+        setCopyBtnText("Copy");
+      }, 3000);
     }
-	};
-	
+  };
 
   return (
     <>
-      {/* Left Section   */}
+      {/* Left Section: Input controls */}
       <div className="left">
         {/* Custome Text  */}
         <div className="panel">
           <div className="heading">
             <div>Custom Text</div>
           </div>
-          <input type="text" value={customText} maxLength="200" onChange={updateCustomText}/>
+          <input type="text" value={customText} maxLength="200" onChange={updateCustomText} />
         </div>
 
         {/* Font Family  */}
@@ -114,7 +111,7 @@ function TextStyle() {
             <div>{fontSize}px</div>
           </div>
           <div className="slider-container">
-            <input type="range" min="16" max="80" value={fontSize}   onChange={updateFontSize} />
+            <input type="range" min="16" max="80" value={fontSize} onChange={updateFontSize} />
           </div>
         </div>
 
@@ -276,10 +273,10 @@ function TextStyle() {
         </div>
       </div>
 
-      {/* Main   */}
+      {/* Main Section: Preview and CSS Code */}
       <div className="main">
         {/* Box Section  */}
-        <div className="box-section" style={{ backgroundColor}}>
+        <div className="box-section" style={{ backgroundColor }}>
           <div className="text" style={textStyles}>
             {customText}
           </div>
@@ -305,7 +302,6 @@ function TextStyle() {
             <span>word-spacing:</span> {wordSpacing}px; <br />
             <span>letter-spacing:</span> {letterSpacing}px; <br />
             <span>text-indent:</span> {textIndent}px; <br />
-           
             <span className="class-name">{"}"}</span>
           </pre>
 

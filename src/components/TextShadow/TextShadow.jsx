@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
+import updateValue from "../../helpers";
 
 function TextShadow() {
+  // State for controlling various properties
   const [customText, setCustomText] = useState(
     "Your can add you own text using side 'Custome Text' Box"
   );
@@ -12,12 +14,7 @@ function TextShadow() {
   const [shadowColor, setShadowColor] = useState("#FF24BA");
   const [backgroundColor, setBackgroundColor] = useState("#ffffff");
 
-  const updateValue = (setter) => {
-    return (event) => {
-      setter(event.target.value);
-    };
-  };
-
+  // Functions to update state based on input changes
   const updateCustomText = updateValue(setCustomText);
   const updateHorizontal = updateValue(setHorizontal);
   const updateVertical = updateValue(setVertical);
@@ -27,13 +24,14 @@ function TextShadow() {
   const updateShadowColor = updateValue(setShadowColor);
   const updateBackgroundColor = updateValue(setBackgroundColor);
 
+  // CSS styles for the text
   const textStyles = {
     fontSize: `${textSize}px`,
     color: textColor,
     textShadow: `${horizontal}px ${vertical}px ${blur}px  ${shadowColor}`,
   };
 
-  // copy to clipboard
+  // Copy to clipboard functionality
   const [copyBtnText, setCopyBtnText] = useState("Copy");
   const preRef = useRef(null);
   const copyCode = () => {
@@ -49,7 +47,7 @@ function TextShadow() {
 
   return (
     <>
-      {/*  Left Section  */}
+      {/* Left Section: Input controls */}
       <div className="left">
         {/* Custome Text Input  */}
         <div className="panel">
@@ -134,7 +132,7 @@ function TextShadow() {
         </div>
       </div>
 
-      {/* Main   */}
+      {/* Main Section: Preview and CSS Code */}
       <div className="main">
         {/* Box Section  */}
         <div className="box-section" style={{ backgroundColor }}>

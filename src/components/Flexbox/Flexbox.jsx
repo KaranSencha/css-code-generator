@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
+import updateValue from "../../helpers";
 
 function Flexbox() {
+  // State for controlling various properties
   const [flexDisplay, setFlexDisplay] = useState("flex");
   const [flexDirection, setFlexDirection] = useState("row");
   const [flexWrap, setFlexWrap] = useState("wrap");
@@ -8,12 +10,7 @@ function Flexbox() {
   const [alignItems, setAlignItems] = useState("start");
   const [alignContent, setAlignContent] = useState("start");
 
-  const updateValue = (setter) => {
-    return (event) => {
-      setter(event.target.value);
-    };
-  };
-
+  // Functions to update state based on input changes
   const updateFlexDisplay = updateValue(setFlexDisplay);
   const updateFlexDirection = updateValue(setFlexDirection);
   const updateFlexWrap = updateValue(setFlexWrap);
@@ -21,6 +18,7 @@ function Flexbox() {
   const updateAlignItems = updateValue(setAlignItems);
   const updateAlignContent = updateValue(setAlignContent);
 
+  // CSS styles for the Container of boxes
   const flexStyles = {
     display: flexDisplay,
     flexDirection,
@@ -30,7 +28,7 @@ function Flexbox() {
     alignContent,
   };
 
-  // copy to clipboard
+  // Copy to clipboard functionality
   const [copyBtnText, setCopyBtnText] = useState("Copy");
   const preRef = useRef(null);
   const copyCode = () => {
@@ -46,6 +44,7 @@ function Flexbox() {
 
   const [boxes, setBoxes] = useState(Array.from({ length: 3 }, (_, index) => index + 1));
 
+  // Add Box
   const addBox = () => {
     if (boxes.length < 12) {
       const newBox = boxes.length + 1;
@@ -53,6 +52,7 @@ function Flexbox() {
     }
   };
 
+  // Remove Box
   const removeBox = () => {
     if (boxes.length > 3) {
       const updatedBoxes = boxes.slice(0, -1);
@@ -65,7 +65,7 @@ function Flexbox() {
 
   return (
     <>
-      {/* Left Section   */}
+      {/* Left Section: Input controls */}
       <div className="left">
         {/* Display  */}
         <div className="panel">
@@ -173,7 +173,7 @@ function Flexbox() {
         </div>
       </div>
 
-      {/* Main   */}
+      {/* Main Section: Preview and CSS Code */}
       <div className="main">
         {/* Box Section  */}
         <div className="box-section" style={flexStyles}>

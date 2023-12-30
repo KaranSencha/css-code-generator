@@ -31,77 +31,28 @@
 
 body {
   font-family: "Poppins", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #191B22;
-  background-color: #242424;
   background-color: #ddd;
-  color: #aaa;
   color: #111;
   line-height: 1.5;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .active {
   color: var(--green) !important;
-  text-decoration:  underline !important;
+  text-decoration: underline !important;
   text-underline-offset: 4px;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.2;
-  text-align: center;
-}
-
-/* Scroll Bar  */
-::-webkit-scrollbar {
-  width: 6px;
-  background-color: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #333;
-  border-radius: 10px;
-}
-
-
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: #535bf2;
-}
-
-
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-
-button:hover {
-  border-color: #646cff;
 }
 
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 2px auto -webkit-focus-ring-color;
 }
 
 
 /* Code styling  */
 .left {
   background-color: var(--white);
+  background-color: #191B22;
   font-size: 1.15rem;
   width: 33%;
   height: 100%;
@@ -116,15 +67,17 @@ button:focus-visible {
 
 .left::-webkit-scrollbar {
   width: 10px;
-  background-color: var(--lightgray1);
+  background-color: transparent;
 }
 
 .left::-webkit-scrollbar-thumb {
-  background-color: var(--lightgray3);
+  background-color: #666666;
+  border-radius: 8px;
 }
 
 .left .panel {
-  border-bottom: 2px solid var(--lightgray3);
+  border-bottom: 2px solid #555;
+  color: #ddd;
   padding: 20px 30px;
 }
 
@@ -134,12 +87,17 @@ button:focus-visible {
   align-items: center;
 }
 
+.panel .heading * {
+  font-weight: 500;
+}
+
 .panel .slider-container {
   padding-top: 8px;
 }
 
 input[type="range"] {
-  background-color: var(--lightgray1);
+  background-color: #777;
+  border-radius: 8px;
   appearance: none;
   height: 12px;
   width: 100%;
@@ -149,9 +107,12 @@ input[type="range"] {
 input[type="range"]::-webkit-slider-thumb {
   appearance: none;
   background-color: var(--green);
+  border: 1px solid white;
   width: 12px;
+  width: 25px;
   height: 25px;
   border-radius: 4px;
+  border-radius: 50%;
   cursor: pointer;
 }
 
@@ -166,27 +127,32 @@ input[type="file"] {
 }
 
 input[type="text"] {
-  font-size: 1.1rem;
-  padding: 12px;
+  font-size: 1.25rem;
+  padding: 10px 12px;
   width: 100%;
   border-radius: 4px;
   outline: none;
-  border: 2px solid var(--lightgray1);
+  color: #bbb;
+  border: 2px solid #666;
+  background-color: inherit;
   margin-top: 10px;
 }
 
 .add,
 .remove {
-  border: 2px solid var(--gray3);
-  background: var(--white);
+  border: 2px solid #666;
+  color: #ccc;
+  background: inherit;
   cursor: pointer;
   border-radius: 4px;
-  padding: 8px 20px;
-  font-size: 1.15rem;
+  font-weight: 600 !important;
+  padding: 10px 20px;
+  font-size: 1.2rem;
 }
 
-select {
-  background-color: var(--lightgray1);
+select{
+  background-color: #43464e;
+  color: #bbb;
   font-size: 1.1rem;
   border: none;
   border-radius: 4px;
@@ -323,7 +289,7 @@ select {
 }
 
 .answer-code span {
- padding-left: 20px;
+  padding-left: 20px;
   color: #04AA6D;
   word-wrap: break-word;
   white-space: normal;
@@ -364,7 +330,7 @@ select {
   }
 
   .panel .heading,
-.panel .btn {
+  .panel .btn {
     font-size: 1.4rem;
   }
 

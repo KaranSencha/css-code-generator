@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
-
+import updateValue from "../../helpers";
 function BosShadow() {
+  // State for controlling various properties
   const [horizontal, setHorizontal] = useState(5);
   const [vertical, setVertical] = useState(5);
   const [blur, setBlur] = useState(5);
@@ -12,12 +13,7 @@ function BosShadow() {
   const [boxHeight, setBoxHeight] = useState(250);
   const [boxRadius, setBoxRadius] = useState(8);
 
-  const updateValue = (setter) => {
-    return (event) => {
-      setter(event.target.value);
-    };
-  };
-
+  // Functions to update state based on input changes
   const updateHorizontal = updateValue(setHorizontal);
   const updateVertical = updateValue(setVertical);
   const updateBlur = updateValue(setBlur);
@@ -29,6 +25,7 @@ function BosShadow() {
   const updateBoxHeight = updateValue(setBoxHeight);
   const updateBoxRadius = updateValue(setBoxRadius);
 
+  // CSS styles for the box
   const boxStyles = {
     width: `${boxWidth}px`,
     height: `${boxHeight}px`,
@@ -37,7 +34,7 @@ function BosShadow() {
     backgroundColor: boxColor,
   };
 
-  // copy to clipboard
+  // Copy to clipboard functionality
   const [copyBtnText, setCopyBtnText] = useState("Copy");
   const preRef = useRef(null);
   const copyCode = () => {
@@ -53,7 +50,7 @@ function BosShadow() {
 
   return (
     <>
-      {/*  Left Section  */}
+      {/* Left Section: Input controls */}
       <div className="left">
         {/* Horizontal Length  */}
         <div className="panel">
@@ -163,7 +160,7 @@ function BosShadow() {
         </div>
       </div>
 
-      {/* Main   */}
+      {/* Main Section: Preview and CSS Code */}
       <div className="main">
         {/* Box Section  */}
         <div className="box-section" style={{ backgroundColor }}>

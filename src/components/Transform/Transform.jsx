@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
+import updateValue from "../../helpers";
 
 function Transform() {
+  // State for controlling various properties
   const [translateX, setTranslateX] = useState(0);
   const [translateY, setTranslateY] = useState(0);
   const [rotate, setRotate] = useState(0);
@@ -9,12 +11,7 @@ function Transform() {
   const [skewX, setSkewX] = useState(0);
   const [skewY, setSkewY] = useState(0);
 
-  const updateValue = (setter) => {
-    return (event) => {
-      setter(event.target.value);
-    };
-  };
-
+  // Functions to update state based on input changes
   const updateTranslateX = updateValue(setTranslateX);
   const updateTranslateY = updateValue(setTranslateY);
   const updateRotate = updateValue(setRotate);
@@ -23,12 +20,13 @@ function Transform() {
   const updateSkewX = updateValue(setSkewX);
   const updateSkewY = updateValue(setSkewY);
 
+  // CSS styles for the box
   const boxStyles = {
     transform: `translate(${translateX}%, ${translateY}%) rotate(${rotate}deg) scaleX(${scaleX}) scaleY(${scaleY}) skew(${skewX}deg, ${skewY}deg)`,
     backgroundColor: "rgb(128, 50, 218)",
   };
 
-  // copy to clipboard
+  // Copy to clipboard functionality
   const [copyBtnText, setCopyBtnText] = useState("Copy");
   const preRef = useRef(null);
   const copyCode = () => {
@@ -44,7 +42,7 @@ function Transform() {
 
   return (
     <>
-      {/* Left Section   */}
+      {/* Left Section: Input controls */}
       <div className="left">
         {/* Translate Horizontal  */}
         <div className="panel">
@@ -157,7 +155,7 @@ function Transform() {
         </div>
       </div>
 
-      {/* Main   */}
+      {/* Main Section: Preview and CSS Code */}
       <div className="main">
         {/* Box Section  */}
         <div className="box-section">

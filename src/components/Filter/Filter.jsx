@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
+import updateValue from "../../helpers";
 
 function Filter() {
+  // State for controlling various properties
   const [grayscale, setGrayscale] = useState(0);
   const [blur, setBlur] = useState(0);
   const [brightness, setBrightness] = useState(100);
@@ -11,12 +13,7 @@ function Filter() {
   const [invert, setInvert] = useState(0);
   const [sepia, setSepia] = useState(0);
 
-  const updateValue = (setter) => {
-    return (event) => {
-      setter(event.target.value);
-    };
-  };
-
+  // Functions to update state based on input changes
   const updateGrayscale = updateValue(setGrayscale);
   const updateBlur = updateValue(setBlur);
   const updateBrightness = updateValue(setBrightness);
@@ -27,11 +24,12 @@ function Filter() {
   const updateInvert = updateValue(setInvert);
   const updateSepia = updateValue(setSepia);
 
+  // CSS styles for the Image
   const imageStyles = {
     filter: `grayscale(${grayscale}%) blur(${blur}px) brightness(${brightness}%) contrast(${contrast}%) saturate(${saturate}%) hue-rotate(${hueRotate}deg) opacity(${opacity}%) invert(${invert}%) sepia(${sepia}%)`,
   };
 
-  // copy to clipboard
+  // Copy to clipboard functionality
   const [copyBtnText, setCopyBtnText] = useState("Copy");
   const preRef = useRef(null);
   const copyCode = () => {
@@ -47,7 +45,7 @@ function Filter() {
 
   return (
     <>
-      {/* Left Section   */}
+      {/* Left Section: Input controls */}
       <div className="left">
         {/* Grayscale   */}
         <div className="panel">
@@ -149,7 +147,7 @@ function Filter() {
         </div>
       </div>
 
-      {/* Main   */}
+      {/* Main Section: Preview and CSS Code */}
       <div className="main">
         {/* Box Section  */}
         <div className="box-section">
@@ -166,7 +164,8 @@ function Filter() {
           <pre ref={preRef}>
             <span className="class-name">.box {"{"}</span>
             <br />
-            <span>filter: </span>{imageStyles.filter}; <br />
+            <span>filter: </span>
+            {imageStyles.filter}; <br />
             <span className="class-name">{"}"}</span>
           </pre>
 
