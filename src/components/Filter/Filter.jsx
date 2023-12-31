@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import updateValue from "../../helpers";
+import filter_image from "../../assets/filter.jpg";
 
 function Filter() {
   // State for controlling various properties
@@ -153,7 +154,7 @@ function Filter() {
         <div className="box-section">
           <img
             style={imageStyles}
-            src="https://images.pexels.com/photos/164186/pexels-photo-164186.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            src={filter_image}
           />
         </div>
 
