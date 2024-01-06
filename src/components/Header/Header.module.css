@@ -1,13 +1,11 @@
 header {
 	position: relative;
 	width: 100%;
-	color: #bbb;
-	background-color: #090909ea;
-	background-color: #252525;
+	background-color:#0E100F;
+	color: #FFFCE1;
 	height: 70px;
 	z-index: 12;
 	display: flex;
-	padding: 0 50px;
 	align-items: center;
 }
 
@@ -48,13 +46,14 @@ header {
 	font-family: cursive;
 	font-size: 2rem;
 	z-index: 99;
+	padding-left: 50px;
 }
 
 .menu {
 	display: flex;
 	flex-direction: column;
 	padding-top: 100px;
-	background: #111;
+	background-color: #0E100F;
 	height: 100vh;
 	width: 100%;
 	position: fixed;
@@ -72,7 +71,7 @@ header {
 	display: block;
 	text-decoration: none;
 	text-align: center;
-	color: #bbb;
+	color: #FFFCE1;
 	transition: color 0.2s ease-in-out;
 	font-size: 2rem;
 	margin-bottom: 30px;

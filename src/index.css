@@ -13,6 +13,8 @@
   --primary: #3992FF;
   --purple: #D83BD2;
   --white: #ffffff;
+  --lightwhite: #FFFCE1;
+  --bglight: #0E100F;
   --lightgray1: #dddddd;
   --lightgray2: #cccccc;
   --lightgray3: #bbbbbb;
@@ -31,15 +33,15 @@
 
 body {
   font-family: "Poppins", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #333;
-  color: #111;
+  background-color: #FFFCE1;
+  color: #0E100F;
   line-height: 1.5;
   overflow: hidden;
 }
 
 
 a:hover {
-  color:var(--primary);
+  color: var(--primary);
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -50,17 +52,11 @@ a:hover {
   text-underline-offset: 4px;
 }
 
-button:focus,
-button:focus-visible {
-  outline: 2px auto -webkit-focus-ring-color;
-}
-
-
 /* Code styling  */
 .left {
-  background-color: var(--white);
-  background-color: #191B22;
+  background-color: #FFFCE1;
   font-size: 1.15rem;
+  border-right: 2px solid #999;
   width: 33%;
   height: 100%;
   position: fixed;
@@ -78,13 +74,13 @@ button:focus-visible {
 }
 
 .left::-webkit-scrollbar-thumb {
-  background-color: #666666;
+  background-color: #999;
   border-radius: 8px;
 }
 
 .left .panel {
-  border-bottom: 2px solid #555;
-  color: #ddd;
+  border-bottom: 1.5px solid #666;
+  color: #0E100F;
   padding: 20px 30px;
 }
 
@@ -103,7 +99,7 @@ button:focus-visible {
 }
 
 input[type="range"] {
-  background-color: #777;
+  background-color: #999;
   border-radius: 8px;
   appearance: none;
   height: 12px;
@@ -114,7 +110,7 @@ input[type="range"] {
 input[type="range"]::-webkit-slider-thumb {
   appearance: none;
   background-color: var(--green);
-  border: 1px solid white;
+  border: 2px solid rgb(34, 34, 34);
   width: 12px;
   width: 25px;
   height: 25px;
@@ -139,7 +135,7 @@ input[type="text"] {
   width: 100%;
   border-radius: 4px;
   outline: none;
-  color: #bbb;
+  color: #0E100F;
   border: 2px solid #666;
   background-color: inherit;
   margin-top: 10px;
@@ -147,8 +143,8 @@ input[type="text"] {
 
 .add,
 .remove {
-  border: 2px solid #666;
-  color: #ccc;
+  border: 2px solid #333;
+  color: #0E100F;
   background: inherit;
   cursor: pointer;
   border-radius: 4px;
@@ -157,9 +153,9 @@ input[type="text"] {
   font-size: 1.2rem;
 }
 
-select{
-  background-color: #43464e;
-  color: #bbb;
+select {
+  background-color: #ccc ;
+  color: #111;
   font-size: 1.1rem;
   border: none;
   border-radius: 4px;
@@ -234,7 +230,7 @@ select{
 .btn {
   font-size: 1.3rem;
   background-color: rgb(68, 155, 241);
-  color: black;
+  color: #0E100F;
   font-weight: 600;
   border: none;
   border-radius: 4px;
@@ -253,8 +249,8 @@ select{
 /* Answer Section  */
 .answer-code {
   font-size: 1.3rem;
-  background-color: #000;
-  color: #d3d4d5;
+  background-color: #0E100F;
+  color: #FFFCE1;
   margin: 30px 10px;
   border-radius: 8px;
   position: relative;
@@ -283,7 +279,8 @@ select{
 .answer-code h3 {
   text-align: center;
   padding: 8px;
-  background-color: #444;
+  background-color: #333;
+  color: #eee;
 }
 
 .answer-code pre {
