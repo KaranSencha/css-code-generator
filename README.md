@@ -1,5 +1,7 @@
 # CSS Code Generator
 
+![CSS Code Generator Image](./public/screenshot.png)
+
 ## Description
 Welcome to the CSS Code Generator! This tool allows you to easily create text-shadow, box-shadow, text styles, flexbox and much more for your web projects.
 

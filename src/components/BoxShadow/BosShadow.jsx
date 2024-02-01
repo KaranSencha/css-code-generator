@@ -177,7 +177,7 @@ function BosShadow() {
             <span className="class-name">.box {"{"}</span>
             <br />
             <span>box-shadow:</span> {boxStyles.boxShadow}; <br />
-            <span>background-color:</span> {backgroundColor}; <br />
+            <span>background-color:</span> {boxColor}; <br />
             <span>width: </span>
             {boxWidth}px;
             <br />

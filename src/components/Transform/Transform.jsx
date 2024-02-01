@@ -40,6 +40,16 @@ function Transform() {
     }
   };
 
+    const check = function (propertyValue, propertyName, initialValue = 0, sign = "") {
+      if (propertyValue != initialValue) {
+        return  (`transform: ${propertyName}: ${
+        propertyValue}${sign}`)
+      } else {
+        return null;
+      }
+  };
+  
+
   return (
     <>
       {/* Left Section: Input controls */}
@@ -171,7 +181,17 @@ function Transform() {
           <pre ref={preRef}>
             <span className="className-name">.box {"{"}</span>
             <br />
-            <span>transform: </span> {boxStyles.transform}; <br />
+            {/* <span>transform: </span>
+            {boxStyles.transform};
+            <br /> */}
+            {check(translateX, "translateX", 0, "%")}
+            {check(translateY, "translateX", 0, "%")}
+            {check(rotate, "rotate", 0, "deg")}
+            {check(scaleX, "scaleX", 1, "")}
+            {check(scaleY, "scaleY", 1, "")}
+            {check(skewX, "skewX", 0, "deg")}
+            {check(skewY, "skewY", 0, "deg")}
+          <br />
             <span className="className-name">{"}"}</span>
           </pre>
 

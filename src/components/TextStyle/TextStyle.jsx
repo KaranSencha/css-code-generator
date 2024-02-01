@@ -290,12 +290,24 @@ function TextStyle() {
             <span className="class-name">.box {"{"}</span>
             <br />
             <span>font-family:</span> {fontFamily}; <br />
-            <span>font-size:</span> {fontSize}px; <br />
+            {fontSize != 16 ? (
+              <>
+                <span>font-size:</span> {fontSize}px; <br />
+              </>
+            ) : null}
             <span>color:</span> {fontColor}; <br />
             <span>background-color:</span> {backgroundColor}; <br />
-            <span>text-align:</span> {textAlign}; <br />
+            {textAlign != "left" ? (
+              <>
+              <span>text-align:</span> {textAlign}; <br />
+              </>
+            ) : null}
             <span>font-weight:</span> {fontWeight}; <br />
-            <span>text-transform:</span> {textTransform}; <br />
+            {textTransform != "none" ? (
+              <>
+              <span>text-transform:</span> {textTransform}; <br />
+              </>
+            ) : null}
             <span>text-decoration:</span> {textDecoration}; <br />
             <span>font-variant:</span> {fontVariant}; <br />
             <span>line-height:</span> {lineHeight}; <br />
